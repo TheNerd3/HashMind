@@ -35,7 +35,7 @@ import joblib
 
 # ===================== CONFIGURACIÓN MEJORADA =====================
 st.set_page_config(
-    page_title="Social Trends AI Analyzer",
+    page_title="Hashmind",
     page_icon="🚀",
     layout="wide",
     initial_sidebar_state="expanded"
@@ -168,12 +168,27 @@ def compute_metrics(df):
     
     def zscore_user(group):
         x = group["likes"].to_numpy(dtype=float)
+        if len(x) <= 1:
+            return np.zeros_like(x)
         mu = x.mean()
-        sd = x.std() if x.std() > 0 else 1.0
-        return (x - mu) / sd
+        sd = x.std()
+        if sd == 0 or np.isnan(sd) or np.isinf(sd):
+            return np.zeros_like(x)
+        result = (x - mu) / sd
+        # Reemplazar cualquier NaN o infinito resultante
+        result = np.nan_to_num(result, nan=0.0, posinf=0.0, neginf=0.0)
+        return result
     
     df["engagement_z"] = df.groupby("user", group_keys=False).apply(zscore_user)
     df["text_plus"] = df.apply(normalize_text, axis=1)
+    
+    # Limpieza final robusta de todas las métricas
+    numeric_cols = ["log_likes", "hashtag_density", "popularity_score", "engagement_z", "hashtag_count"]
+    for col in numeric_cols:
+        if col in df.columns:
+            df[col] = pd.to_numeric(df[col], errors='coerce').fillna(0)
+            df[col] = df[col].replace([np.inf, -np.inf], 0)
+    
     return df
 
 def explode_hashtags(df):
@@ -219,7 +234,7 @@ def ensure_nltk_min():
         nltk.download('stopwords')
 
 # ===================== HEADER =====================
-st.markdown('<h1 class="main-title">🚀 Social Trends AI Analyzer</h1>', unsafe_allow_html=True)
+st.markdown('<h1 class="main-title">🚀 Hashmind</h1>', unsafe_allow_html=True)
 st.markdown("**Análisis avanzado de redes sociales con IA** | Pandas + NumPy + ML + Visualizaciones interactivas")
 st.divider()
 
@@ -261,15 +276,9 @@ with st.sidebar:
     st.divider()
     
     with st.expander("🤖 Modelo de IA", expanded=True):
-        model_name = st.selectbox(
-            "Algoritmo",
-            ["LogisticRegression", "LinearSVC", "RandomForest"]
-        )
-        use_grid = st.checkbox("GridSearch CV", value=False)
-    
-    st.divider()
-    
-    want_csv = st.checkbox("📥 Habilitar descargas", value=True)
+        st.info("📊 Usando Regresión Logística optimizada")
+        model_name = "LogisticRegression"
+        use_grid = False
     
     st.markdown("---")
     st.markdown("### 📊 Leyenda")
@@ -429,15 +438,16 @@ with tab1:
         hide_index=True
     )
     
-    if want_csv:
-        buff = io.StringIO()
-        df.to_csv(buff, index=False)
-        st.download_button(
-            "⬇️ Descargar Dataset Completo",
-            buff.getvalue(),
-            file_name="dataset_enriquecido.csv",
-            mime="text/csv"
-        )
+    # Opción de descarga
+    st.divider()
+    buff = io.StringIO()
+    df.to_csv(buff, index=False)
+    st.download_button(
+        "⬇️ Descargar Dataset Completo",
+        buff.getvalue(),
+        file_name="dataset_enriquecido.csv",
+        mime="text/csv"
+    )
 
 # ===================== TAB 2: TENDENCIAS =====================
 with tab2:
@@ -562,16 +572,34 @@ with tab3:
     
     # Preparación de datos
     with st.spinner("🔧 Preparando datos para entrenamiento..."):
-        tfidf = TfidfVectorizer(max_features=8000, ngram_range=(1,2), min_df=2)
-        X_text = tfidf.fit_transform(df_lab["text_plus"].fillna(""))
+        # Preprocesar texto de forma robusta
+        text_data = df_lab["text_plus"].fillna("").astype(str)
+        # Reemplazar textos vacíos con un placeholder
+        text_data = text_data.replace("", "empty_post")
         
-        X_num = df_lab[["popularity_score", "hashtag_count", "engagement_z", 
-                        "hashtag_density", "log_likes"]].to_numpy(dtype=float)
+        tfidf = TfidfVectorizer(max_features=8000, ngram_range=(1,2), min_df=2)
+        X_text = tfidf.fit_transform(text_data)
+        
+        # Extraer características numéricas y manejar valores faltantes de forma robusta
+        numeric_features = df_lab[["popularity_score", "hashtag_count", "engagement_z", 
+                                   "hashtag_density", "log_likes"]]
+        # Reemplazar NaN e infinitos con 0
+        numeric_features = numeric_features.fillna(0).replace([np.inf, -np.inf], 0)
+        X_num = numeric_features.to_numpy(dtype=float)
+        
         scaler = StandardScaler()
         X_num_scaled = scaler.fit_transform(X_num)
         
         X = hstack([X_text, csr_matrix(X_num_scaled)])
         y = (df_lab["label"] == "alta").astype(int).to_numpy()
+        
+        # Validación final: verificar que no hay NaN en los datos
+        if np.isnan(X_num_scaled).any():
+            st.error("❌ Detectados valores NaN en características numéricas")
+            st.stop()
+        if np.isinf(X_num_scaled).any():
+            st.error("❌ Detectados valores infinitos en características numéricas")
+            st.stop()
     
     if y.sum() == 0 or y.sum() == len(y):
         st.error("❌ Todas las etiquetas son iguales. Ajusta la estrategia.")
@@ -581,22 +609,13 @@ with tab3:
         )
         
         # Entrenamiento
-        with st.spinner(f"🚀 Entrenando modelo {model_name}..."):
-            if model_name == "LogisticRegression":
-                base = LogisticRegression(max_iter=300)
-                grid = {"C":[0.1,1,3], "penalty":["l2"], "class_weight":[None,"balanced"]}
-            elif model_name == "LinearSVC":
-                base = LinearSVC()
-                grid = {"C":[0.1,1,3], "class_weight":[None,"balanced"]}
-            else:
-                base = RandomForestClassifier(random_state=42)
-                grid = {"n_estimators":[200,400], "max_depth":[None,10,20], 
-                       "min_samples_split":[2,5]}
-            
-            if use_grid:
-                clf = GridSearchCV(base, grid, scoring="f1", cv=3, n_jobs=-1)
-            else:
-                clf = base
+        with st.spinner("🚀 Entrenando modelo de Regresión Logística..."):
+            clf = LogisticRegression(
+                max_iter=500, 
+                C=1.0, 
+                class_weight='balanced',
+                random_state=42
+            )
             
             clf.fit(X_train, y_train)
             pred = clf.predict(X_test)
@@ -610,7 +629,7 @@ with tab3:
         col1, col2, col3 = st.columns(3)
         col1.metric("🎯 Accuracy", f"{acc:.3f}")
         col2.metric("📊 F1-Score", f"{f1:.3f}")
-        col3.metric("📈 Modelo", model_name)
+        col3.metric("📈 Modelo", "Regresión Logística")
         
         st.divider()
         
@@ -639,20 +658,23 @@ with tab3:
         
         st.divider()
         
+        # Guardar modelo en session_state
+        model_pack = {
+            "clf": clf,
+            "tfidf": tfidf,
+            "scaler": scaler,
+            "label_mode": label_mode,
+            "label_value": label_value,
+        }
+        st.session_state["loaded_model"] = model_pack
+        
         # Guardar modelo
         col1, col2 = st.columns(2)
         
         with col1:
             if st.button("💾 Guardar Modelo", use_container_width=True):
-                model_pack = {
-                    "clf": clf,
-                    "tfidf": tfidf,
-                    "scaler": scaler,
-                    "label_mode": label_mode,
-                    "label_value": label_value,
-                }
                 joblib.dump(model_pack, "model_pack.joblib")
-                st.success("✅ Modelo guardado")
+                st.success("✅ Modelo guardado en memoria y listo para descargar")
                 
                 with open("model_pack.joblib", "rb") as f:
                     st.download_button(
@@ -673,138 +695,259 @@ with tab3:
 with tab4:
     st.markdown("## 🔮 Predicción de Relevancia")
     
+    # Intentar obtener el modelo del session_state
     model_pack = st.session_state.get("loaded_model")
-    if model_pack is None:
-        possible = ["clf","tfidf","scaler","label_mode","label_value"]
-        if all(name in globals() for name in possible):
-            model_pack = {k: globals()[k] for k in possible}
     
     if not model_pack:
         st.info("⚠️ Entrena o carga un modelo en la pestaña 'Modelado IA'")
     else:
-        st.markdown("### ✍️ Ingresa un nuevo post")
+        # Selector de modo de predicción
+        prediction_mode = st.radio(
+            "📋 Modo de predicción",
+            ["✍️ Texto Manual", "📸 Análisis de Imagen con IA"],
+            horizontal=True
+        )
         
-        col1, col2 = st.columns([2, 1])
+        st.divider()
         
-        with col1:
-            example_text = st.text_area(
-                "Texto del post",
-                "Análisis de datos con Python: numpy, pandas y visualizaciones interactivas 🚀",
-                height=100
-            )
+        # Variables para almacenar texto y hashtags
+        example_text = ""
+        example_ht = ""
+        should_predict = False
         
-        with col2:
-            example_ht = st.text_input(
-                "Hashtags",
-                "python, datascience, analytics"
-            )
-        
-        if st.button("🔮 Predecir Relevancia", use_container_width=True):
-            with st.spinner("Analizando..."):
-                hs = [h.strip().lower() for h in re.split(r"[#,;\s]+", example_ht) if h.strip()]
-                lang = detect_lang_safe(example_text)
-                stemmer, stop = build_normalizer(lang if lang in ("es","en") else "en")
-                tokens = re.findall(r"[A-Za-zÀ-ÿ0-9_]+", example_text.lower())
-                tokens = [t for t in tokens if t not in stop and len(t)>2]
-                tokens = [stemmer.stem(t) for t in tokens]
-                text_plus = " ".join(tokens + [f"#{h}" for h in hs])
-                
-                tfidf = model_pack["tfidf"]
-                scaler = model_pack["scaler"]
-                clf = model_pack["clf"]
-                
-                X_text_new = tfidf.transform([text_plus])
-                X_num_new = np.array([[0.0, len(hs), 0.0, len(hs)/max(1,len(tokens)+len(hs)), 0.0]])
-                X_num_new_scaled = scaler.transform(X_num_new)
-                X_new = hstack([csr_matrix(X_text_new), csr_matrix(X_num_new_scaled)])
+        if prediction_mode == "✍️ Texto Manual":
+            st.markdown("### ✍️ Ingresa un nuevo post")
             
-            # Resultado con diseño mejorado
-            if hasattr(clf, "predict_proba"):
-                proba = clf.predict_proba(X_new)[0,1]
-                label = "alta" if proba >= 0.5 else "baja"
+            col1, col2 = st.columns([2, 1])
+            
+            with col1:
+                example_text = st.text_area(
+                    "Texto del post",
+                    "Análisis de datos con Python: numpy, pandas y visualizaciones interactivas 🚀",
+                    height=100,
+                    key="manual_text"
+                )
+            
+            with col2:
+                example_ht = st.text_input(
+                    "Hashtags",
+                    "python, datascience, analytics",
+                    key="manual_hashtags"
+                )
+            
+            should_predict = st.button("🔮 Predecir Relevancia", use_container_width=True, key="predict_manual")
+        
+        else:  # Modo Análisis de Imagen
+            st.markdown("### 📸 Análisis Inteligente de Imágenes")
+            st.info("🚀 **Describe tu imagen y obtén sugerencias de hashtags basadas en tus datos históricos**")
+            
+            col1, col2 = st.columns([1, 1])
+            
+            with col1:
+                uploaded_image = st.file_uploader(
+                    "📤 Sube tu imagen (opcional)",
+                    type=["jpg", "jpeg", "png", "webp"],
+                    help="Vista previa de tu contenido visual"
+                )
                 
-                st.markdown("### 🎯 Resultado de la Predicción")
+                if uploaded_image:
+                    st.image(uploaded_image, caption="📷 Vista previa", use_container_width=True)
+            
+            with col2:
+                st.markdown("**✍️ Describe el contenido de tu imagen:**")
+                image_description = st.text_area(
+                    "",
+                    placeholder="Ej: Paisaje de montaña al atardecer con colores naranjas y púrpuras...",
+                    height=150,
+                    key="image_desc",
+                    help="Describe qué se ve en la imagen, el tema, los colores, elementos principales, etc."
+                )
                 
-                col1, col2, col3 = st.columns(3)
+                category = st.selectbox(
+                    "🎯 Categoría principal",
+                    ["Lifestyle", "Tecnología", "Comida", "Viajes", "Moda", "Fitness", 
+                     "Negocios", "Naturaleza", "Arte", "Fotografía", "Educación", "Otro"],
+                    key="image_category"
+                )
+            
+            if st.button("✨ Generar Sugerencias", use_container_width=True, type="primary", key="analyze_button"):
+                if not image_description.strip():
+                    st.warning("⚠️ Por favor describe tu imagen primero")
+                else:
+                    with st.spinner("🔍 Analizando y generando sugerencias..."):
+                        # Análisis basado en datos históricos
+                        exploded = explode_hashtags(df)
+                        
+                        # Obtener hashtags más populares generales
+                        top_general = exploded.groupby("hashtag_list").agg(
+                            count=("hashtag_list", "size"),
+                            avg_likes=("likes", "mean")
+                        ).sort_values(["count", "avg_likes"], ascending=False).head(30)
+                        
+                        # Palabras clave de la descripción
+                        keywords = set(re.findall(r'\b[a-zA-Z]{3,}\b', image_description.lower()))
+                        keywords.add(category.lower())
+                        
+                        # Buscar hashtags relacionados con keywords
+                        related_hashtags = []
+                        for keyword in keywords:
+                            matches = [ht for ht in top_general.index if keyword in ht.lower() or ht.lower() in keyword]
+                            related_hashtags.extend(matches[:3])
+                        
+                        # Combinar con los más populares
+                        suggested_hashtags = list(set(related_hashtags))[:8]
+                        remaining = [ht for ht in top_general.index if ht not in suggested_hashtags]
+                        suggested_hashtags.extend(remaining[:7])
+                        
+                        # Generar texto sugerido
+                        emojis_by_category = {
+                            "Lifestyle": "✨💫🌟",
+                            "Tecnología": "💻🚀⚡",
+                            "Comida": "🍽️😋🔥",
+                            "Viajes": "✈️🌍🗺️",
+                            "Moda": "👗💄✨",
+                            "Fitness": "💪🏋️‍♀️🔥",
+                            "Negocios": "💼📊🎯",
+                            "Naturaleza": "🌿🌸🌲",
+                            "Arte": "🎨🖌️✨",
+                            "Fotografía": "📸📷✨",
+                            "Educación": "📚💡🎓",
+                            "Otro": "✨🌟💫"
+                        }
+                        
+                        emoji = emojis_by_category.get(category, "✨")
+                        texto_sugerido = f"{emoji} {image_description[:100]}... ¡Descubre más! {emoji}"
+                        
+                        # Guardar resultados
+                        st.session_state['ai_analysis'] = {
+                            'descripcion': image_description,
+                            'tema': category,
+                            'hashtags': ", ".join(suggested_hashtags),
+                            'texto': texto_sugerido
+                        }
+                        
+                        st.success("✅ ¡Sugerencias generadas!")
+                        st.rerun()
+            
+            # Mostrar resultados si existen
+            if 'ai_analysis' in st.session_state:
+                analysis = st.session_state['ai_analysis']
+                
+                st.divider()
+                st.success("✅ Análisis completado")
+                
+                st.markdown("### 🎯 Sugerencias Generadas")
+                
+                # Descripción y tema
+                col1, col2 = st.columns([2, 1])
                 
                 with col1:
-                    if label == "alta":
-                        st.success(f"### ✅ RELEVANCIA ALTA")
-                    else:
-                        st.warning(f"### ⚠️ RELEVANCIA BAJA")
+                    st.markdown("**📝 Tu Descripción:**")
+                    st.info(analysis['descripcion'])
                 
                 with col2:
-                    st.metric("Probabilidad Alta", f"{proba:.1%}")
+                    st.markdown("**🎨 Categoría:**")
+                    st.success(f"**{analysis['tema']}**")
                 
-                with col3:
-                    confidence = max(proba, 1-proba)
-                    st.metric("Confianza", f"{confidence:.1%}")
-                
-                # Gráfico de probabilidad
-                fig = go.Figure(go.Indicator(
-                    mode = "gauge+number+delta",
-                    value = proba * 100,
-                    domain = {'x': [0, 1], 'y': [0, 1]},
-                    title = {'text': "Probabilidad de Alta Relevancia"},
-                    delta = {'reference': 50},
-                    gauge = {
-                        'axis': {'range': [None, 100]},
-                        'bar': {'color': "#667eea"},
-                        'steps': [
-                            {'range': [0, 30], 'color': "#ffcccc"},
-                            {'range': [30, 70], 'color': "#ffffcc"},
-                            {'range': [70, 100], 'color': "#ccffcc"}
-                        ],
-                        'threshold': {
-                            'line': {'color': "red", 'width': 4},
-                            'thickness': 0.75,
-                            'value': 50
-                        }
-                    }
-                ))
-                fig.update_layout(height=300)
-                st.plotly_chart(fig, use_container_width=True)
-                
-                # Análisis del post
-                st.markdown("### 📊 Análisis del Post")
-                analysis_col1, analysis_col2 = st.columns(2)
-                
-                with analysis_col1:
-                    st.markdown("**Características detectadas:**")
-                    st.markdown(f"- 🔤 Idioma: `{lang.upper()}`")
-                    st.markdown(f"- #️⃣ Hashtags: `{len(hs)}`")
-                    st.markdown(f"- 📝 Tokens: `{len(tokens)}`")
-                    st.markdown(f"- 📏 Densidad hashtags: `{len(hs)/max(1,len(tokens)+len(hs)):.3f}`")
-                
-                with analysis_col2:
-                    st.markdown("**Recomendaciones:**")
-                    if len(hs) < 3:
-                        st.markdown("- ⚠️ Agrega más hashtags (ideal: 3-5)")
-                    elif len(hs) > 7:
-                        st.markdown("- ⚠️ Reduce hashtags (pueden parecer spam)")
-                    else:
-                        st.markdown("- ✅ Buena cantidad de hashtags")
+                # Hashtags sugeridos
+                st.markdown("**#️⃣ Hashtags Sugeridos (basados en tus datos históricos):**")
+                if analysis['hashtags']:
+                    hashtags_list = [h.strip().replace('#', '') for h in analysis['hashtags'].split(',')]
                     
-                    if len(tokens) < 10:
-                        st.markdown("- ⚠️ El texto es muy corto")
-                    else:
-                        st.markdown("- ✅ Longitud de texto adecuada")
-            
-            else:
-                pred = clf.predict(X_new)[0]
-                label = "ALTA" if pred == 1 else "BAJA"
+                    # Calcular métricas de cada hashtag
+                    st.markdown("**Top Hashtags con estadísticas:**")
+                    
+                    hashtag_stats = []
+                    exploded = explode_hashtags(df)
+                    for ht in hashtags_list[:10]:
+                        ht_data = exploded[exploded['hashtag_list'] == ht]
+                        if len(ht_data) > 0:
+                            hashtag_stats.append({
+                                'Hashtag': f'#{ht}',
+                                'Usos': len(ht_data),
+                                'Avg Likes': f"{ht_data['likes'].mean():.1f}",
+                                'Max Likes': int(ht_data['likes'].max())
+                            })
+                    
+                    if hashtag_stats:
+                        st.dataframe(
+                            pd.DataFrame(hashtag_stats),
+                            use_container_width=True,
+                            hide_index=True
+                        )
+                    
+                    # Mostrar hashtags visualmente
+                    hashtag_html = " ".join([f'<span style="background: linear-gradient(120deg, #667eea 0%, #764ba2 100%); color: white; padding: 5px 12px; border-radius: 15px; margin: 3px; display: inline-block; font-size: 0.9em;">#{h}</span>' for h in hashtags_list])
+                    st.markdown(hashtag_html, unsafe_allow_html=True)
                 
-                if pred == 1:
-                    st.success(f"### ✅ RELEVANCIA {label}")
-                else:
-                    st.warning(f"### ⚠️ RELEVANCIA {label}")
-
+                st.divider()
+                
+                # Texto sugerido
+                st.markdown("**💬 Texto Sugerido para tu Post:**")
+                suggested_text_edit = st.text_area(
+                    "",
+                    analysis['texto'],
+                    height=100,
+                    key="ai_texto_edit",
+                    help="Puedes editar este texto antes de predecir"
+                )
+                
+                suggested_ht_edit = st.text_input(
+                    "Editar hashtags (separados por coma)",
+                    analysis['hashtags'],
+                    key="ai_ht_edit"
+                )
+                
+                # Botones de acción
+                col1, col2 = st.columns(2)
+                
+                with col1:
+                    if st.button("🔮 Predecir Relevancia", use_container_width=True, type="primary", key="predict_from_image"):
+                        example_text = suggested_text_edit
+                        example_ht = suggested_ht_edit
+                        should_predict = True
+                
+                with col2:
+                    if st.button("🔄 Nueva Imagen", use_container_width=True):
+                        del st.session_state['ai_analysis']
+                        st.rerun()
+                
+                # Si debe predecir, establecer valores
+                if should_predict:
+                    example_text = suggested_text_edit
+                    example_ht = suggested_ht_edit
+            else:
+                st.markdown("""
+                **✨ Cómo funciona:**
+                1. 📤 Sube una imagen (opcional, solo para referencia visual)
+                2. ✍️ Describe el contenido de tu imagen
+                3. 🎯 Selecciona la categoría
+                4. ✨ Obtén hashtags basados en tu historial de datos
+                5. 🔮 Predice la relevancia de tu post
+                
+                **💡 Ventajas:**
+                - Sugerencias basadas en TUS datos reales
+                - Hashtags que han funcionado en tu nicho
+                - Análisis de engagement histórico
+                - Predicción personalizada
+                """)        
 # ===================== TAB 5: COMPARAR CAMPAÑAS =====================
 with tab5:
     st.markdown("## 📂 Comparativa de Campañas")
     
-    if "__source" not in df.columns or df["__source"].nunique() == 1:
+    # Verificar si hay múltiples archivos cargados
+    if "__source" not in df.columns:
         st.info("ℹ️ Sube múltiples archivos para comparar campañas")
+        st.markdown("""
+        ### 📋 ¿Cómo usar esta función?
+        
+        1. Ve al sidebar y carga **2 o más archivos CSV**
+        2. Cada archivo representará una campaña diferente
+        3. Aquí podrás comparar métricas entre campañas
+        """)
+    elif df["__source"].nunique() == 1:
+        st.info(f"ℹ️ Solo hay una campaña cargada: **{df['__source'].iloc[0]}**")
+        st.markdown("Sube más archivos CSV para comparar diferentes campañas.")
     else:
         # Resumen por campaña
         agg = df.groupby("__source").agg(
@@ -923,22 +1066,23 @@ with tab5:
         st.plotly_chart(fig, use_container_width=True)
         
         # Descarga
-        if want_csv:
-            buff = io.StringIO()
-            agg.to_csv(buff)
-            st.download_button(
-                "⬇️ Descargar Comparativa (CSV)",
-                buff.getvalue(),
-                file_name="campanias_resumen.csv",
-                mime="text/csv",
-                use_container_width=True
-            )
+        st.divider()
+        st.markdown("### 📥 Descargar Datos")
+        buff = io.StringIO()
+        agg.to_csv(buff)
+        st.download_button(
+            "⬇️ Descargar Comparativa (CSV)",
+            buff.getvalue(),
+            file_name="campanias_resumen.csv",
+            mime="text/csv",
+            use_container_width=True
+        )
 
 # ===================== FOOTER =====================
 st.divider()
 st.markdown("""
 <div style='text-align: center; color: #666; padding: 20px;'>
-    <p>🚀 <strong>Social Trends AI Analyzer</strong> | Análisis Avanzado de Redes Sociales</p>
+    <p>🚀 <strong>Hashmind</strong> | Análisis Avanzado de Redes Sociales</p>
     <p>Powered by Pandas • NumPy • Scikit-learn • Plotly • Streamlit</p>
 </div>
 """, unsafe_allow_html=True)
