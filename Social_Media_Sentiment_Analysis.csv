@@ -1,0 +1,501 @@
+User,Platform,Post,Hashtag,Sentiment,Likes,Shares,Comments
+User_328,Facebook,"Totally disappointed, expected better.",#DataScience,Neutral,379,94,47
+User_58,LinkedIn,"Totally disappointed, expected better.",#Coding,Negative,300,15,15
+User_13,Instagram,"Totally disappointed, expected better.",#Coding,Negative,122,95,33
+User_380,Facebook,Great content on AI today!,#DataScience,Neutral,124,96,11
+User_141,Instagram,Absolutely love the way they handled it.,#Coding,Negative,25,61,35
+User_126,Twitter,Why do people overhype this?,#MachineLearning,Positive,342,31,10
+User_115,Facebook,"Neutral on this, nothing special.",#Coding,Neutral,463,89,21
+User_72,Instagram,"Neutral on this, nothing special.",#Coding,Negative,271,77,35
+User_378,Instagram,"Machine Learning is the future, amazing stuff!",#Coding,Positive,115,90,27
+User_53,Facebook,"Totally disappointed, expected better.",#AI,Negative,326,26,29
+User_347,Reddit,Why do people overhype this?,#MachineLearning,Neutral,119,50,14
+User_380,LinkedIn,"Machine Learning is the future, amazing stuff!",#Coding,Positive,26,30,25
+User_457,Instagram,"Totally disappointed, expected better.",#MachineLearning,Neutral,51,70,40
+User_280,LinkedIn,"Totally disappointed, expected better.",#MachineLearning,Negative,211,41,11
+User_45,LinkedIn,Loving the new features on this app!,#MachineLearning,Negative,169,99,11
+User_303,Twitter,"Totally disappointed, expected better.",#DataScience,Positive,367,36,40
+User_217,LinkedIn,This update is frustrating and full of bugs.,#Coding,Positive,241,48,42
+User_17,Instagram,Great content on AI today!,#AI,Negative,51,59,27
+User_16,Twitter,Great content on AI today!,#AI,Neutral,348,68,25
+User_48,Facebook,"Machine Learning is the future, amazing stuff!",#AI,Negative,394,83,1
+User_112,Instagram,This update is frustrating and full of bugs.,#AI,Negative,70,45,47
+User_120,Twitter,Not sure how I feel about the recent changes.,#Coding,Negative,2,39,39
+User_259,Twitter,Great content on AI today!,#AI,Neutral,493,33,12
+User_309,LinkedIn,Not sure how I feel about the recent changes.,#MachineLearning,Neutral,281,46,28
+User_14,Facebook,Absolutely love the way they handled it.,#DataScience,Negative,500,65,37
+User_288,Instagram,This update is frustrating and full of bugs.,#Tech,Positive,475,63,27
+User_102,Instagram,Not sure how I feel about the recent changes.,#AI,Neutral,80,59,24
+User_367,LinkedIn,Loving the new features on this app!,#Tech,Negative,208,12,0
+User_333,Facebook,Why do people overhype this?,#Tech,Negative,334,92,45
+User_360,Instagram,"Neutral on this, nothing special.",#Tech,Negative,478,60,13
+User_280,Facebook,"Totally disappointed, expected better.",#MachineLearning,Positive,450,97,13
+User_215,Instagram,"Neutral on this, nothing special.",#AI,Neutral,449,40,17
+User_113,LinkedIn,"Machine Learning is the future, amazing stuff!",#Coding,Negative,243,26,48
+User_230,Reddit,Loving the new features on this app!,#MachineLearning,Neutral,244,47,45
+User_302,Instagram,Great content on AI today!,#Coding,Negative,333,40,50
+User_143,Twitter,"Machine Learning is the future, amazing stuff!",#AI,Negative,102,52,4
+User_415,Twitter,"Machine Learning is the future, amazing stuff!",#MachineLearning,Neutral,387,5,36
+User_446,Reddit,"Neutral on this, nothing special.",#Tech,Positive,493,72,6
+User_4,Instagram,This update is frustrating and full of bugs.,#MachineLearning,Positive,147,28,34
+User_389,Twitter,Great content on AI today!,#MachineLearning,Neutral,164,94,11
+User_413,Twitter,"Machine Learning is the future, amazing stuff!",#AI,Neutral,146,18,23
+User_82,Instagram,"Totally disappointed, expected better.",#Tech,Negative,330,2,20
+User_358,Facebook,Great content on AI today!,#Tech,Negative,30,33,12
+User_217,Instagram,Why do people overhype this?,#DataScience,Neutral,464,70,29
+User_175,Facebook,This update is frustrating and full of bugs.,#DataScience,Neutral,393,74,7
+User_143,Reddit,Absolutely love the way they handled it.,#Coding,Neutral,45,74,16
+User_80,LinkedIn,Great content on AI today!,#DataScience,Positive,333,92,42
+User_111,Reddit,Not sure how I feel about the recent changes.,#AI,Positive,293,53,31
+User_491,LinkedIn,"Machine Learning is the future, amazing stuff!",#MachineLearning,Positive,118,37,33
+User_391,Twitter,Not sure how I feel about the recent changes.,#Tech,Neutral,273,19,40
+User_173,Twitter,This update is frustrating and full of bugs.,#MachineLearning,Neutral,378,25,20
+User_53,Twitter,Loving the new features on this app!,#AI,Negative,370,42,38
+User_48,Facebook,Not sure how I feel about the recent changes.,#MachineLearning,Positive,435,29,24
+User_195,LinkedIn,"Machine Learning is the future, amazing stuff!",#Tech,Positive,479,48,39
+User_50,Twitter,"Totally disappointed, expected better.",#DataScience,Positive,19,72,25
+User_184,Instagram,"Totally disappointed, expected better.",#Coding,Positive,467,31,37
+User_434,LinkedIn,"Machine Learning is the future, amazing stuff!",#Tech,Neutral,471,63,7
+User_177,LinkedIn,"Neutral on this, nothing special.",#Tech,Negative,89,70,22
+User_310,Facebook,This update is frustrating and full of bugs.,#Tech,Negative,213,83,22
+User_136,Reddit,"Neutral on this, nothing special.",#Tech,Negative,451,87,29
+User_414,Facebook,"Machine Learning is the future, amazing stuff!",#AI,Neutral,428,43,39
+User_23,Twitter,Why do people overhype this?,#Tech,Positive,90,32,11
+User_374,Instagram,"Machine Learning is the future, amazing stuff!",#MachineLearning,Neutral,478,97,43
+User_236,Instagram,Absolutely love the way they handled it.,#AI,Positive,470,62,45
+User_275,Twitter,Absolutely love the way they handled it.,#DataScience,Neutral,18,92,19
+User_64,Instagram,"Neutral on this, nothing special.",#MachineLearning,Negative,428,82,39
+User_499,Facebook,"Neutral on this, nothing special.",#MachineLearning,Negative,203,94,37
+User_473,Facebook,This update is frustrating and full of bugs.,#MachineLearning,Negative,403,62,5
+User_194,Twitter,"Totally disappointed, expected better.",#MachineLearning,Negative,253,58,43
+User_41,Instagram,Loving the new features on this app!,#AI,Positive,95,21,8
+User_283,LinkedIn,Why do people overhype this?,#DataScience,Neutral,479,93,20
+User_151,Reddit,I'm struggling to understand this concept.,#DataScience,Positive,383,45,7
+User_425,LinkedIn,"Totally disappointed, expected better.",#Tech,Neutral,492,21,15
+User_322,Facebook,"Machine Learning is the future, amazing stuff!",#Coding,Negative,446,17,19
+User_317,Facebook,Loving the new features on this app!,#AI,Negative,474,92,7
+User_454,Facebook,This update is frustrating and full of bugs.,#DataScience,Negative,148,69,11
+User_442,Facebook,Great content on AI today!,#AI,Neutral,448,62,23
+User_186,Reddit,"Totally disappointed, expected better.",#AI,Negative,19,23,44
+User_296,Twitter,"Totally disappointed, expected better.",#Tech,Positive,4,69,9
+User_99,Facebook,Loving the new features on this app!,#DataScience,Positive,152,82,32
+User_361,Instagram,"Machine Learning is the future, amazing stuff!",#Coding,Positive,290,7,24
+User_36,Reddit,"Totally disappointed, expected better.",#Coding,Neutral,308,67,26
+User_24,Facebook,Loving the new features on this app!,#Coding,Positive,54,4,38
+User_339,Instagram,Not sure how I feel about the recent changes.,#MachineLearning,Negative,475,9,8
+User_117,Facebook,"Neutral on this, nothing special.",#DataScience,Neutral,171,85,36
+User_396,Twitter,Absolutely love the way they handled it.,#MachineLearning,Negative,145,6,24
+User_149,Reddit,"Neutral on this, nothing special.",#MachineLearning,Neutral,232,97,27
+User_41,Twitter,"Machine Learning is the future, amazing stuff!",#MachineLearning,Positive,328,0,11
+User_438,Reddit,Not sure how I feel about the recent changes.,#Tech,Negative,278,52,31
+User_120,Facebook,"Totally disappointed, expected better.",#Tech,Negative,268,17,40
+User_444,Facebook,Why do people overhype this?,#AI,Neutral,252,80,34
+User_52,Reddit,"Neutral on this, nothing special.",#AI,Negative,455,29,44
+User_195,Instagram,This update is frustrating and full of bugs.,#DataScience,Positive,480,8,41
+User_143,Instagram,"Neutral on this, nothing special.",#DataScience,Neutral,68,90,11
+User_233,Facebook,I'm struggling to understand this concept.,#Tech,Negative,435,19,35
+User_326,Facebook,Why do people overhype this?,#AI,Neutral,258,1,10
+User_428,Twitter,I'm struggling to understand this concept.,#AI,Negative,239,27,31
+User_187,Facebook,I'm struggling to understand this concept.,#MachineLearning,Positive,139,64,18
+User_84,Reddit,This update is frustrating and full of bugs.,#Coding,Positive,98,58,8
+User_190,Instagram,Not sure how I feel about the recent changes.,#Coding,Positive,414,47,11
+User_182,Instagram,I'm struggling to understand this concept.,#Coding,Positive,57,7,20
+User_108,Twitter,Why do people overhype this?,#Tech,Negative,169,79,28
+User_344,Instagram,"Neutral on this, nothing special.",#Coding,Positive,83,81,39
+User_137,Instagram,"Machine Learning is the future, amazing stuff!",#Coding,Neutral,374,85,3
+User_360,LinkedIn,Why do people overhype this?,#MachineLearning,Negative,234,78,22
+User_480,Reddit,Absolutely love the way they handled it.,#DataScience,Positive,331,61,0
+User_350,LinkedIn,Loving the new features on this app!,#Tech,Neutral,131,84,31
+User_332,Instagram,"Neutral on this, nothing special.",#AI,Negative,367,62,8
+User_37,Twitter,This update is frustrating and full of bugs.,#MachineLearning,Neutral,95,2,12
+User_312,Twitter,I'm struggling to understand this concept.,#Coding,Negative,7,0,24
+User_326,Instagram,"Machine Learning is the future, amazing stuff!",#AI,Neutral,377,68,35
+User_88,Facebook,I'm struggling to understand this concept.,#MachineLearning,Positive,172,70,32
+User_274,LinkedIn,This update is frustrating and full of bugs.,#Tech,Neutral,404,52,41
+User_374,Instagram,Why do people overhype this?,#Coding,Neutral,151,1,31
+User_126,Twitter,Absolutely love the way they handled it.,#Tech,Negative,290,2,26
+User_84,Twitter,Loving the new features on this app!,#MachineLearning,Negative,345,67,43
+User_237,LinkedIn,Absolutely love the way they handled it.,#AI,Positive,387,92,31
+User_195,Reddit,"Neutral on this, nothing special.",#DataScience,Neutral,98,35,26
+User_139,Instagram,Why do people overhype this?,#Coding,Neutral,89,68,45
+User_474,Instagram,Loving the new features on this app!,#Tech,Neutral,312,36,28
+User_328,Reddit,Great content on AI today!,#AI,Neutral,438,2,31
+User_353,LinkedIn,Absolutely love the way they handled it.,#AI,Positive,327,64,10
+User_286,LinkedIn,I'm struggling to understand this concept.,#DataScience,Negative,459,89,5
+User_113,Twitter,"Totally disappointed, expected better.",#MachineLearning,Neutral,207,86,36
+User_351,Reddit,"Neutral on this, nothing special.",#DataScience,Positive,423,55,1
+User_167,LinkedIn,"Neutral on this, nothing special.",#DataScience,Positive,218,22,50
+User_432,Facebook,Loving the new features on this app!,#MachineLearning,Positive,263,13,48
+User_394,Instagram,Great content on AI today!,#MachineLearning,Positive,167,12,14
+User_398,Twitter,"Machine Learning is the future, amazing stuff!",#MachineLearning,Positive,44,67,18
+User_29,Reddit,Absolutely love the way they handled it.,#AI,Negative,205,19,2
+User_118,Twitter,Not sure how I feel about the recent changes.,#AI,Positive,342,30,17
+User_421,LinkedIn,"Machine Learning is the future, amazing stuff!",#Coding,Negative,48,24,14
+User_17,LinkedIn,"Neutral on this, nothing special.",#Coding,Neutral,94,79,34
+User_413,Facebook,"Neutral on this, nothing special.",#DataScience,Neutral,71,67,18
+User_162,Instagram,This update is frustrating and full of bugs.,#DataScience,Negative,244,32,10
+User_206,Reddit,Loving the new features on this app!,#Coding,Negative,165,45,49
+User_138,Twitter,"Totally disappointed, expected better.",#Tech,Neutral,479,34,29
+User_34,Instagram,Great content on AI today!,#DataScience,Positive,127,50,36
+User_109,LinkedIn,Not sure how I feel about the recent changes.,#Tech,Neutral,3,10,47
+User_468,Instagram,"Machine Learning is the future, amazing stuff!",#Tech,Positive,133,47,49
+User_483,Twitter,Absolutely love the way they handled it.,#MachineLearning,Positive,196,51,49
+User_291,Instagram,Loving the new features on this app!,#AI,Negative,120,58,31
+User_449,LinkedIn,Absolutely love the way they handled it.,#Coding,Negative,228,72,35
+User_368,Instagram,Why do people overhype this?,#AI,Neutral,385,31,32
+User_162,Reddit,This update is frustrating and full of bugs.,#Coding,Neutral,136,89,7
+User_109,Instagram,Great content on AI today!,#AI,Negative,488,28,36
+User_336,Reddit,This update is frustrating and full of bugs.,#Coding,Neutral,168,38,7
+User_256,Instagram,"Neutral on this, nothing special.",#AI,Negative,154,87,17
+User_203,LinkedIn,This update is frustrating and full of bugs.,#MachineLearning,Negative,298,10,49
+User_453,Facebook,Not sure how I feel about the recent changes.,#Tech,Neutral,370,83,34
+User_469,Facebook,"Neutral on this, nothing special.",#Coding,Positive,293,83,23
+User_330,Reddit,"Machine Learning is the future, amazing stuff!",#Tech,Positive,5,97,34
+User_235,Reddit,Absolutely love the way they handled it.,#Coding,Negative,133,4,48
+User_74,Facebook,"Machine Learning is the future, amazing stuff!",#Coding,Neutral,334,11,2
+User_136,LinkedIn,Why do people overhype this?,#MachineLearning,Positive,184,51,48
+User_72,LinkedIn,"Neutral on this, nothing special.",#AI,Negative,354,48,46
+User_127,Instagram,"Neutral on this, nothing special.",#Coding,Negative,120,48,28
+User_382,Reddit,Great content on AI today!,#AI,Neutral,31,70,34
+User_288,LinkedIn,"Neutral on this, nothing special.",#MachineLearning,Neutral,341,60,13
+User_276,Twitter,Absolutely love the way they handled it.,#DataScience,Negative,60,7,27
+User_135,Instagram,Not sure how I feel about the recent changes.,#Tech,Positive,238,81,6
+User_383,Instagram,Why do people overhype this?,#Coding,Neutral,157,1,47
+User_300,Facebook,Great content on AI today!,#MachineLearning,Neutral,81,89,41
+User_220,Reddit,"Totally disappointed, expected better.",#AI,Neutral,207,21,48
+User_460,LinkedIn,Absolutely love the way they handled it.,#Coding,Positive,351,10,15
+User_299,LinkedIn,Not sure how I feel about the recent changes.,#AI,Positive,257,63,19
+User_205,Instagram,This update is frustrating and full of bugs.,#DataScience,Negative,472,55,2
+User_186,Reddit,"Machine Learning is the future, amazing stuff!",#Coding,Neutral,458,82,28
+User_113,Reddit,Why do people overhype this?,#Tech,Positive,454,100,16
+User_71,Reddit,I'm struggling to understand this concept.,#Coding,Positive,360,42,22
+User_261,Facebook,Absolutely love the way they handled it.,#Tech,Neutral,394,72,5
+User_253,LinkedIn,"Machine Learning is the future, amazing stuff!",#AI,Positive,159,12,28
+User_47,Reddit,Loving the new features on this app!,#Coding,Negative,353,67,7
+User_387,Facebook,"Machine Learning is the future, amazing stuff!",#MachineLearning,Positive,60,5,49
+User_25,Twitter,"Machine Learning is the future, amazing stuff!",#MachineLearning,Positive,327,29,15
+User_441,Instagram,"Totally disappointed, expected better.",#DataScience,Negative,469,27,13
+User_57,LinkedIn,"Totally disappointed, expected better.",#MachineLearning,Neutral,481,88,47
+User_79,LinkedIn,"Neutral on this, nothing special.",#DataScience,Positive,151,72,37
+User_322,Instagram,Not sure how I feel about the recent changes.,#AI,Negative,188,60,44
+User_82,Twitter,"Neutral on this, nothing special.",#Tech,Neutral,314,34,22
+User_406,Facebook,Absolutely love the way they handled it.,#AI,Negative,113,5,45
+User_349,Instagram,"Neutral on this, nothing special.",#Tech,Positive,112,9,39
+User_217,Facebook,I'm struggling to understand this concept.,#Tech,Negative,490,87,40
+User_306,Facebook,I'm struggling to understand this concept.,#DataScience,Positive,68,35,27
+User_33,Facebook,Absolutely love the way they handled it.,#MachineLearning,Neutral,244,69,10
+User_198,Twitter,Absolutely love the way they handled it.,#MachineLearning,Neutral,78,72,39
+User_196,Twitter,Why do people overhype this?,#DataScience,Negative,232,84,8
+User_306,Facebook,"Neutral on this, nothing special.",#DataScience,Positive,382,4,50
+User_240,Reddit,I'm struggling to understand this concept.,#AI,Neutral,310,22,13
+User_271,LinkedIn,Great content on AI today!,#DataScience,Negative,191,40,13
+User_129,Twitter,Great content on AI today!,#MachineLearning,Neutral,212,2,3
+User_498,Reddit,"Totally disappointed, expected better.",#DataScience,Neutral,359,26,36
+User_284,Reddit,Why do people overhype this?,#DataScience,Positive,281,75,22
+User_441,LinkedIn,Great content on AI today!,#Tech,Neutral,467,18,34
+User_483,Facebook,Why do people overhype this?,#DataScience,Neutral,241,96,17
+User_6,Reddit,Loving the new features on this app!,#AI,Positive,387,91,38
+User_349,Reddit,I'm struggling to understand this concept.,#DataScience,Neutral,275,50,34
+User_370,Reddit,"Neutral on this, nothing special.",#Coding,Neutral,410,9,10
+User_59,Facebook,Why do people overhype this?,#Coding,Positive,340,38,20
+User_350,Facebook,Why do people overhype this?,#Tech,Positive,422,20,45
+User_454,Twitter,Not sure how I feel about the recent changes.,#Tech,Neutral,111,72,18
+User_275,Twitter,"Neutral on this, nothing special.",#Coding,Neutral,390,30,18
+User_385,Reddit,Loving the new features on this app!,#Tech,Neutral,126,72,36
+User_137,Facebook,Not sure how I feel about the recent changes.,#Tech,Neutral,348,49,17
+User_394,Facebook,Absolutely love the way they handled it.,#MachineLearning,Negative,386,86,32
+User_329,LinkedIn,"Totally disappointed, expected better.",#MachineLearning,Neutral,305,69,43
+User_175,Reddit,I'm struggling to understand this concept.,#DataScience,Positive,447,42,6
+User_58,Twitter,This update is frustrating and full of bugs.,#Coding,Positive,403,49,8
+User_151,LinkedIn,"Neutral on this, nothing special.",#AI,Positive,41,96,48
+User_223,Facebook,This update is frustrating and full of bugs.,#Coding,Positive,269,94,50
+User_81,Twitter,Absolutely love the way they handled it.,#Coding,Neutral,228,17,26
+User_233,Reddit,"Neutral on this, nothing special.",#MachineLearning,Neutral,270,88,3
+User_2,Facebook,Loving the new features on this app!,#MachineLearning,Negative,360,92,17
+User_489,Reddit,Not sure how I feel about the recent changes.,#Tech,Neutral,185,10,41
+User_370,LinkedIn,Why do people overhype this?,#AI,Positive,39,64,8
+User_449,LinkedIn,Not sure how I feel about the recent changes.,#MachineLearning,Neutral,469,95,44
+User_369,LinkedIn,This update is frustrating and full of bugs.,#Tech,Negative,288,44,8
+User_135,Instagram,"Neutral on this, nothing special.",#AI,Neutral,57,6,15
+User_498,Reddit,"Machine Learning is the future, amazing stuff!",#MachineLearning,Neutral,31,12,9
+User_257,LinkedIn,I'm struggling to understand this concept.,#Coding,Positive,424,55,45
+User_391,LinkedIn,"Totally disappointed, expected better.",#Coding,Negative,280,29,20
+User_92,Reddit,Why do people overhype this?,#AI,Neutral,462,9,15
+User_260,LinkedIn,This update is frustrating and full of bugs.,#AI,Neutral,258,43,48
+User_468,Reddit,I'm struggling to understand this concept.,#MachineLearning,Negative,103,77,43
+User_55,Facebook,Absolutely love the way they handled it.,#MachineLearning,Neutral,293,98,25
+User_446,Reddit,Why do people overhype this?,#AI,Negative,274,78,31
+User_321,Reddit,I'm struggling to understand this concept.,#AI,Negative,76,76,9
+User_153,Instagram,"Neutral on this, nothing special.",#Tech,Positive,84,50,36
+User_431,Facebook,Absolutely love the way they handled it.,#Tech,Neutral,167,99,40
+User_328,Instagram,Loving the new features on this app!,#Tech,Negative,437,41,17
+User_260,LinkedIn,"Totally disappointed, expected better.",#Coding,Negative,266,3,40
+User_312,Reddit,This update is frustrating and full of bugs.,#Coding,Negative,226,81,26
+User_102,Facebook,Great content on AI today!,#Tech,Positive,59,34,24
+User_79,Instagram,"Machine Learning is the future, amazing stuff!",#Tech,Neutral,348,100,28
+User_192,Reddit,Great content on AI today!,#AI,Positive,105,57,4
+User_391,Twitter,This update is frustrating and full of bugs.,#Coding,Positive,367,62,40
+User_83,Instagram,Why do people overhype this?,#Tech,Negative,298,29,50
+User_277,Facebook,This update is frustrating and full of bugs.,#DataScience,Negative,250,45,49
+User_489,Instagram,This update is frustrating and full of bugs.,#MachineLearning,Negative,46,70,5
+User_399,Instagram,"Neutral on this, nothing special.",#Tech,Negative,460,48,25
+User_473,Instagram,Not sure how I feel about the recent changes.,#Coding,Positive,261,55,32
+User_272,LinkedIn,"Machine Learning is the future, amazing stuff!",#Tech,Negative,228,23,47
+User_471,Twitter,Loving the new features on this app!,#DataScience,Neutral,414,87,17
+User_1,Facebook,Loving the new features on this app!,#AI,Positive,28,74,44
+User_307,Facebook,I'm struggling to understand this concept.,#Coding,Negative,232,84,23
+User_166,Facebook,Loving the new features on this app!,#AI,Neutral,67,48,29
+User_251,Reddit,"Machine Learning is the future, amazing stuff!",#MachineLearning,Negative,262,10,31
+User_10,Facebook,I'm struggling to understand this concept.,#AI,Neutral,212,98,20
+User_58,Facebook,I'm struggling to understand this concept.,#Tech,Negative,233,79,37
+User_476,Twitter,Why do people overhype this?,#DataScience,Negative,288,37,0
+User_186,Reddit,Not sure how I feel about the recent changes.,#AI,Positive,29,31,49
+User_450,Reddit,Great content on AI today!,#DataScience,Negative,286,91,46
+User_426,Instagram,Absolutely love the way they handled it.,#Coding,Neutral,236,9,5
+User_414,LinkedIn,Why do people overhype this?,#Coding,Neutral,344,10,46
+User_158,Reddit,"Totally disappointed, expected better.",#Tech,Positive,413,34,29
+User_123,Reddit,Not sure how I feel about the recent changes.,#Tech,Negative,157,19,40
+User_30,Twitter,Not sure how I feel about the recent changes.,#Tech,Positive,370,48,42
+User_124,Facebook,Not sure how I feel about the recent changes.,#DataScience,Negative,11,91,44
+User_450,Reddit,This update is frustrating and full of bugs.,#MachineLearning,Positive,202,100,22
+User_291,Reddit,"Totally disappointed, expected better.",#MachineLearning,Negative,130,81,4
+User_485,LinkedIn,Why do people overhype this?,#MachineLearning,Negative,418,19,50
+User_41,Twitter,"Totally disappointed, expected better.",#Coding,Positive,1,94,34
+User_44,LinkedIn,Great content on AI today!,#Coding,Positive,381,49,25
+User_375,Reddit,"Neutral on this, nothing special.",#MachineLearning,Positive,111,40,13
+User_249,Reddit,"Totally disappointed, expected better.",#Tech,Positive,296,46,27
+User_418,Twitter,Not sure how I feel about the recent changes.,#AI,Negative,37,13,13
+User_36,Instagram,Great content on AI today!,#MachineLearning,Negative,23,11,31
+User_390,Instagram,"Neutral on this, nothing special.",#AI,Neutral,216,0,17
+User_273,Reddit,"Machine Learning is the future, amazing stuff!",#MachineLearning,Negative,176,39,20
+User_393,Reddit,"Neutral on this, nothing special.",#AI,Positive,358,56,18
+User_65,LinkedIn,"Machine Learning is the future, amazing stuff!",#Tech,Positive,32,46,21
+User_66,LinkedIn,Loving the new features on this app!,#Coding,Negative,277,97,35
+User_338,LinkedIn,"Neutral on this, nothing special.",#MachineLearning,Neutral,30,34,36
+User_244,Facebook,"Machine Learning is the future, amazing stuff!",#MachineLearning,Neutral,478,13,8
+User_485,Reddit,Absolutely love the way they handled it.,#Tech,Negative,457,16,36
+User_282,Facebook,Not sure how I feel about the recent changes.,#DataScience,Positive,35,11,31
+User_85,Instagram,This update is frustrating and full of bugs.,#MachineLearning,Positive,478,23,50
+User_136,Reddit,"Neutral on this, nothing special.",#AI,Negative,241,55,21
+User_271,Reddit,I'm struggling to understand this concept.,#Tech,Neutral,16,57,43
+User_447,Twitter,"Totally disappointed, expected better.",#DataScience,Negative,146,71,48
+User_311,Reddit,"Machine Learning is the future, amazing stuff!",#MachineLearning,Negative,209,71,3
+User_217,Instagram,Why do people overhype this?,#MachineLearning,Negative,92,65,2
+User_494,Reddit,"Machine Learning is the future, amazing stuff!",#Coding,Negative,393,52,6
+User_109,Facebook,"Neutral on this, nothing special.",#DataScience,Positive,69,13,40
+User_476,Reddit,"Machine Learning is the future, amazing stuff!",#Tech,Positive,392,3,50
+User_277,Facebook,Great content on AI today!,#AI,Negative,328,11,29
+User_387,LinkedIn,Why do people overhype this?,#MachineLearning,Neutral,500,45,1
+User_374,LinkedIn,"Neutral on this, nothing special.",#Tech,Negative,373,70,7
+User_354,Twitter,This update is frustrating and full of bugs.,#Coding,Positive,330,11,10
+User_103,Reddit,Great content on AI today!,#MachineLearning,Positive,493,76,28
+User_366,LinkedIn,Why do people overhype this?,#DataScience,Neutral,215,76,29
+User_160,LinkedIn,"Totally disappointed, expected better.",#Tech,Negative,191,100,0
+User_205,Twitter,I'm struggling to understand this concept.,#AI,Positive,456,41,27
+User_344,Twitter,"Totally disappointed, expected better.",#Coding,Positive,195,49,12
+User_333,Reddit,"Machine Learning is the future, amazing stuff!",#Tech,Negative,229,1,44
+User_192,Facebook,"Machine Learning is the future, amazing stuff!",#MachineLearning,Negative,445,37,8
+User_225,Reddit,Loving the new features on this app!,#AI,Neutral,469,52,41
+User_461,Facebook,Why do people overhype this?,#MachineLearning,Neutral,464,49,19
+User_265,Twitter,"Machine Learning is the future, amazing stuff!",#MachineLearning,Neutral,193,99,10
+User_232,Instagram,Loving the new features on this app!,#DataScience,Negative,192,10,17
+User_62,Reddit,"Totally disappointed, expected better.",#DataScience,Negative,41,92,5
+User_127,Instagram,Loving the new features on this app!,#MachineLearning,Neutral,349,71,41
+User_116,Facebook,"Totally disappointed, expected better.",#Coding,Positive,493,31,23
+User_33,Reddit,"Neutral on this, nothing special.",#DataScience,Positive,338,73,16
+User_174,Instagram,"Machine Learning is the future, amazing stuff!",#DataScience,Negative,447,66,5
+User_11,Instagram,Great content on AI today!,#DataScience,Positive,276,21,23
+User_302,Reddit,"Totally disappointed, expected better.",#DataScience,Negative,68,87,42
+User_284,Instagram,I'm struggling to understand this concept.,#AI,Neutral,334,48,41
+User_118,Reddit,Great content on AI today!,#MachineLearning,Negative,440,21,10
+User_302,Instagram,Great content on AI today!,#AI,Negative,178,17,3
+User_113,Twitter,"Totally disappointed, expected better.",#Tech,Negative,60,34,25
+User_4,Reddit,"Machine Learning is the future, amazing stuff!",#Tech,Positive,91,38,40
+User_37,Twitter,Not sure how I feel about the recent changes.,#Tech,Negative,275,34,19
+User_363,LinkedIn,This update is frustrating and full of bugs.,#AI,Positive,201,63,46
+User_324,Twitter,Loving the new features on this app!,#MachineLearning,Neutral,270,18,44
+User_31,Instagram,"Machine Learning is the future, amazing stuff!",#Tech,Neutral,65,8,48
+User_118,Facebook,"Neutral on this, nothing special.",#DataScience,Positive,372,21,14
+User_35,Twitter,Loving the new features on this app!,#Tech,Negative,114,55,27
+User_464,Twitter,"Totally disappointed, expected better.",#Coding,Neutral,427,35,41
+User_17,Twitter,I'm struggling to understand this concept.,#DataScience,Negative,1,53,5
+User_441,Facebook,Not sure how I feel about the recent changes.,#DataScience,Positive,387,38,45
+User_170,Facebook,This update is frustrating and full of bugs.,#DataScience,Negative,11,61,6
+User_37,Twitter,"Machine Learning is the future, amazing stuff!",#Tech,Neutral,500,100,0
+User_264,LinkedIn,I'm struggling to understand this concept.,#DataScience,Negative,152,9,13
+User_122,Facebook,Why do people overhype this?,#Coding,Neutral,237,46,30
+User_143,Facebook,Not sure how I feel about the recent changes.,#AI,Negative,344,32,4
+User_343,Facebook,Great content on AI today!,#Coding,Neutral,368,31,8
+User_249,Reddit,Not sure how I feel about the recent changes.,#MachineLearning,Neutral,278,92,37
+User_110,Twitter,Absolutely love the way they handled it.,#DataScience,Neutral,217,80,14
+User_277,LinkedIn,I'm struggling to understand this concept.,#Coding,Positive,272,63,33
+User_68,Facebook,Absolutely love the way they handled it.,#Tech,Positive,194,76,43
+User_371,Reddit,Absolutely love the way they handled it.,#MachineLearning,Positive,421,78,28
+User_479,Instagram,"Machine Learning is the future, amazing stuff!",#Coding,Negative,117,25,0
+User_452,Instagram,Not sure how I feel about the recent changes.,#DataScience,Negative,126,58,0
+User_293,Facebook,"Machine Learning is the future, amazing stuff!",#Tech,Negative,235,13,44
+User_296,LinkedIn,"Neutral on this, nothing special.",#DataScience,Neutral,177,17,21
+User_243,LinkedIn,"Machine Learning is the future, amazing stuff!",#MachineLearning,Negative,79,38,7
+User_125,Twitter,I'm struggling to understand this concept.,#Coding,Positive,141,0,27
+User_402,Facebook,This update is frustrating and full of bugs.,#DataScience,Positive,96,50,44
+User_243,Instagram,"Neutral on this, nothing special.",#MachineLearning,Neutral,479,42,8
+User_414,Twitter,This update is frustrating and full of bugs.,#Tech,Neutral,448,79,30
+User_209,LinkedIn,Not sure how I feel about the recent changes.,#Coding,Negative,371,48,4
+User_98,Twitter,Great content on AI today!,#Coding,Neutral,391,42,14
+User_49,Instagram,Why do people overhype this?,#MachineLearning,Positive,57,56,24
+User_50,LinkedIn,Absolutely love the way they handled it.,#Coding,Positive,16,42,5
+User_338,Reddit,I'm struggling to understand this concept.,#Tech,Positive,414,55,46
+User_221,Reddit,This update is frustrating and full of bugs.,#Tech,Positive,338,83,6
+User_182,Facebook,Why do people overhype this?,#Coding,Neutral,214,76,6
+User_217,Twitter,Loving the new features on this app!,#DataScience,Negative,314,17,20
+User_211,LinkedIn,"Machine Learning is the future, amazing stuff!",#DataScience,Negative,392,38,23
+User_240,Facebook,Absolutely love the way they handled it.,#Tech,Neutral,479,41,19
+User_443,Twitter,This update is frustrating and full of bugs.,#DataScience,Negative,452,77,8
+User_374,Instagram,"Neutral on this, nothing special.",#MachineLearning,Positive,455,88,24
+User_28,LinkedIn,I'm struggling to understand this concept.,#AI,Neutral,8,25,49
+User_345,Twitter,"Machine Learning is the future, amazing stuff!",#Coding,Neutral,123,61,48
+User_335,LinkedIn,"Totally disappointed, expected better.",#MachineLearning,Positive,105,40,8
+User_331,Twitter,Why do people overhype this?,#Tech,Negative,34,22,41
+User_51,Instagram,I'm struggling to understand this concept.,#AI,Neutral,51,50,43
+User_32,LinkedIn,This update is frustrating and full of bugs.,#Tech,Negative,304,40,9
+User_207,Reddit,Great content on AI today!,#AI,Positive,17,37,4
+User_373,Instagram,"Neutral on this, nothing special.",#MachineLearning,Negative,228,94,33
+User_174,Twitter,Loving the new features on this app!,#AI,Neutral,306,88,36
+User_410,LinkedIn,"Totally disappointed, expected better.",#DataScience,Neutral,344,81,0
+User_442,Instagram,Absolutely love the way they handled it.,#MachineLearning,Negative,360,62,39
+User_56,Twitter,I'm struggling to understand this concept.,#Coding,Neutral,446,73,41
+User_128,Reddit,"Totally disappointed, expected better.",#Tech,Negative,24,100,10
+User_99,Reddit,Great content on AI today!,#DataScience,Neutral,125,31,28
+User_98,Twitter,This update is frustrating and full of bugs.,#Coding,Neutral,379,41,22
+User_275,Reddit,"Neutral on this, nothing special.",#AI,Neutral,22,48,46
+User_230,Instagram,"Machine Learning is the future, amazing stuff!",#DataScience,Negative,205,35,13
+User_72,Reddit,Why do people overhype this?,#Coding,Neutral,224,100,40
+User_217,Facebook,This update is frustrating and full of bugs.,#MachineLearning,Neutral,119,50,47
+User_94,Reddit,Not sure how I feel about the recent changes.,#AI,Negative,276,46,9
+User_143,Facebook,Loving the new features on this app!,#Coding,Negative,111,14,26
+User_237,LinkedIn,Loving the new features on this app!,#AI,Positive,386,72,39
+User_128,Instagram,"Machine Learning is the future, amazing stuff!",#Coding,Negative,442,25,43
+User_448,LinkedIn,"Neutral on this, nothing special.",#Tech,Negative,397,75,28
+User_473,LinkedIn,This update is frustrating and full of bugs.,#MachineLearning,Neutral,28,69,13
+User_39,Reddit,This update is frustrating and full of bugs.,#DataScience,Positive,71,23,5
+User_227,Reddit,Great content on AI today!,#Coding,Negative,257,87,6
+User_414,Reddit,Absolutely love the way they handled it.,#AI,Neutral,148,98,8
+User_442,LinkedIn,Not sure how I feel about the recent changes.,#MachineLearning,Negative,119,70,48
+User_439,Instagram,Why do people overhype this?,#DataScience,Neutral,417,3,7
+User_282,Instagram,"Neutral on this, nothing special.",#AI,Neutral,469,93,37
+User_51,Facebook,I'm struggling to understand this concept.,#MachineLearning,Neutral,374,59,46
+User_26,Twitter,Absolutely love the way they handled it.,#AI,Positive,294,90,24
+User_334,Instagram,Why do people overhype this?,#MachineLearning,Neutral,163,26,22
+User_277,Reddit,"Totally disappointed, expected better.",#DataScience,Negative,295,56,27
+User_429,Facebook,Not sure how I feel about the recent changes.,#DataScience,Negative,306,37,20
+User_8,Reddit,Why do people overhype this?,#AI,Neutral,395,88,50
+User_497,LinkedIn,This update is frustrating and full of bugs.,#MachineLearning,Neutral,344,8,8
+User_48,LinkedIn,"Neutral on this, nothing special.",#Coding,Neutral,419,52,15
+User_475,Reddit,"Totally disappointed, expected better.",#DataScience,Positive,164,86,17
+User_386,Instagram,Why do people overhype this?,#Coding,Neutral,121,63,41
+User_435,Twitter,"Machine Learning is the future, amazing stuff!",#Coding,Positive,154,17,5
+User_122,Reddit,Loving the new features on this app!,#Tech,Neutral,448,81,15
+User_86,Instagram,I'm struggling to understand this concept.,#AI,Negative,73,38,35
+User_209,Facebook,Great content on AI today!,#AI,Positive,338,30,38
+User_249,Reddit,"Neutral on this, nothing special.",#AI,Neutral,266,32,38
+User_247,Facebook,"Neutral on this, nothing special.",#MachineLearning,Neutral,113,84,46
+User_110,Instagram,Great content on AI today!,#DataScience,Neutral,211,19,38
+User_443,Instagram,I'm struggling to understand this concept.,#DataScience,Neutral,153,91,18
+User_206,Instagram,This update is frustrating and full of bugs.,#Tech,Negative,140,54,49
+User_463,Instagram,I'm struggling to understand this concept.,#Tech,Positive,31,48,44
+User_31,LinkedIn,Absolutely love the way they handled it.,#Tech,Neutral,285,9,1
+User_85,Instagram,I'm struggling to understand this concept.,#Coding,Positive,485,57,42
+User_195,LinkedIn,Loving the new features on this app!,#AI,Positive,302,76,19
+User_2,Twitter,Why do people overhype this?,#MachineLearning,Neutral,450,61,13
+User_200,LinkedIn,"Machine Learning is the future, amazing stuff!",#DataScience,Neutral,376,74,33
+User_136,Facebook,Great content on AI today!,#MachineLearning,Positive,466,51,38
+User_475,Twitter,This update is frustrating and full of bugs.,#AI,Positive,89,68,32
+User_402,Facebook,"Neutral on this, nothing special.",#AI,Positive,320,64,12
+User_402,Reddit,This update is frustrating and full of bugs.,#DataScience,Negative,347,88,47
+User_233,Reddit,Great content on AI today!,#Coding,Negative,218,53,25
+User_147,LinkedIn,"Totally disappointed, expected better.",#Tech,Negative,284,69,18
+User_217,Facebook,Loving the new features on this app!,#Coding,Positive,253,4,41
+User_357,Reddit,Loving the new features on this app!,#AI,Negative,24,46,3
+User_491,Reddit,I'm struggling to understand this concept.,#AI,Neutral,497,89,50
+User_375,Reddit,Great content on AI today!,#Coding,Positive,176,68,50
+User_402,Twitter,Not sure how I feel about the recent changes.,#Tech,Negative,482,76,15
+User_285,Twitter,"Totally disappointed, expected better.",#Tech,Neutral,329,81,31
+User_339,Instagram,Great content on AI today!,#AI,Neutral,343,10,24
+User_368,Facebook,This update is frustrating and full of bugs.,#Tech,Negative,195,13,7
+User_250,Reddit,Absolutely love the way they handled it.,#Tech,Neutral,402,98,15
+User_80,Facebook,Great content on AI today!,#DataScience,Neutral,268,31,31
+User_98,Instagram,"Totally disappointed, expected better.",#DataScience,Positive,163,84,40
+User_152,LinkedIn,Great content on AI today!,#MachineLearning,Neutral,356,85,38
+User_112,Instagram,Great content on AI today!,#Coding,Positive,213,45,4
+User_496,Reddit,I'm struggling to understand this concept.,#AI,Neutral,209,21,33
+User_30,LinkedIn,Not sure how I feel about the recent changes.,#Tech,Positive,76,82,0
+User_297,LinkedIn,"Totally disappointed, expected better.",#MachineLearning,Neutral,153,78,23
+User_377,Instagram,Loving the new features on this app!,#DataScience,Negative,192,5,20
+User_278,Reddit,"Machine Learning is the future, amazing stuff!",#Tech,Neutral,94,72,8
+User_32,LinkedIn,Not sure how I feel about the recent changes.,#Coding,Negative,386,82,24
+User_383,Instagram,Not sure how I feel about the recent changes.,#DataScience,Neutral,275,86,36
+User_161,Instagram,Absolutely love the way they handled it.,#AI,Negative,242,82,26
+User_30,Reddit,"Machine Learning is the future, amazing stuff!",#Tech,Negative,123,51,23
+User_26,Instagram,Not sure how I feel about the recent changes.,#MachineLearning,Positive,434,96,34
+User_300,Instagram,This update is frustrating and full of bugs.,#AI,Negative,115,42,43
+User_245,Instagram,Loving the new features on this app!,#Tech,Neutral,153,55,11
+User_258,Facebook,Not sure how I feel about the recent changes.,#Tech,Negative,439,13,48
+User_471,Twitter,Loving the new features on this app!,#Tech,Neutral,362,1,30
+User_437,Facebook,I'm struggling to understand this concept.,#Tech,Negative,73,12,49
+User_272,Instagram,Great content on AI today!,#Tech,Neutral,412,33,4
+User_81,Twitter,"Totally disappointed, expected better.",#AI,Neutral,237,28,1
+User_30,LinkedIn,I'm struggling to understand this concept.,#Coding,Neutral,468,65,37
+User_492,Facebook,Loving the new features on this app!,#Coding,Neutral,29,95,4
+User_261,Facebook,Not sure how I feel about the recent changes.,#AI,Neutral,287,66,0
+User_42,Facebook,"Machine Learning is the future, amazing stuff!",#Coding,Negative,211,71,16
+User_436,Reddit,Loving the new features on this app!,#MachineLearning,Neutral,495,74,13
+User_96,Instagram,Not sure how I feel about the recent changes.,#MachineLearning,Negative,213,88,2
+User_36,LinkedIn,Why do people overhype this?,#AI,Positive,285,73,3
+User_305,LinkedIn,Absolutely love the way they handled it.,#MachineLearning,Positive,271,28,50
+User_35,LinkedIn,This update is frustrating and full of bugs.,#AI,Negative,68,57,25
+User_346,Instagram,This update is frustrating and full of bugs.,#MachineLearning,Neutral,198,47,32
+User_442,Twitter,"Neutral on this, nothing special.",#DataScience,Negative,124,50,18
+User_121,Facebook,"Neutral on this, nothing special.",#AI,Positive,130,59,40
+User_207,Instagram,I'm struggling to understand this concept.,#Tech,Negative,104,98,45
+User_62,Facebook,Absolutely love the way they handled it.,#MachineLearning,Negative,169,86,32
+User_483,Instagram,"Totally disappointed, expected better.",#DataScience,Neutral,331,75,49
+User_456,Facebook,This update is frustrating and full of bugs.,#AI,Positive,40,88,26
+User_292,Instagram,"Neutral on this, nothing special.",#MachineLearning,Neutral,472,64,27
+User_127,Twitter,Absolutely love the way they handled it.,#Tech,Neutral,230,19,44
+User_297,LinkedIn,Great content on AI today!,#MachineLearning,Negative,433,44,25
+User_305,Facebook,"Totally disappointed, expected better.",#DataScience,Negative,189,3,5
+User_21,Instagram,Loving the new features on this app!,#Coding,Negative,47,61,40
+User_318,Twitter,Absolutely love the way they handled it.,#Coding,Negative,274,13,34
+User_42,Twitter,"Machine Learning is the future, amazing stuff!",#DataScience,Neutral,370,37,34
+User_215,LinkedIn,"Neutral on this, nothing special.",#DataScience,Neutral,424,53,39
+User_337,Instagram,Loving the new features on this app!,#AI,Negative,97,10,9
+User_299,Facebook,Loving the new features on this app!,#Coding,Negative,26,14,17
+User_290,Reddit,"Neutral on this, nothing special.",#AI,Positive,137,93,5
+User_268,Twitter,Why do people overhype this?,#MachineLearning,Neutral,193,18,19
+User_162,Twitter,Why do people overhype this?,#DataScience,Neutral,344,44,5
+User_479,LinkedIn,This update is frustrating and full of bugs.,#AI,Neutral,309,39,32
+User_134,Instagram,"Neutral on this, nothing special.",#DataScience,Negative,308,43,13
+User_105,Reddit,"Neutral on this, nothing special.",#AI,Negative,20,58,9
+User_343,Reddit,This update is frustrating and full of bugs.,#MachineLearning,Negative,447,100,34
+User_367,Reddit,This update is frustrating and full of bugs.,#MachineLearning,Positive,37,26,20
+User_161,Instagram,I'm struggling to understand this concept.,#Tech,Negative,96,66,25
+User_123,Facebook,"Totally disappointed, expected better.",#Coding,Positive,411,61,37
+User_136,Twitter,Not sure how I feel about the recent changes.,#Tech,Negative,389,44,40
+User_203,Instagram,This update is frustrating and full of bugs.,#Coding,Neutral,300,60,48
+User_68,Reddit,Not sure how I feel about the recent changes.,#MachineLearning,Positive,370,12,41
+User_344,Twitter,"Machine Learning is the future, amazing stuff!",#AI,Negative,343,56,43
+User_331,Twitter,"Totally disappointed, expected better.",#DataScience,Negative,286,92,41
+User_154,Reddit,"Totally disappointed, expected better.",#MachineLearning,Neutral,111,89,4
+User_235,Reddit,Absolutely love the way they handled it.,#MachineLearning,Negative,245,57,19
+User_162,Twitter,I'm struggling to understand this concept.,#AI,Neutral,106,40,44
+User_476,LinkedIn,Why do people overhype this?,#MachineLearning,Negative,445,8,27
+User_385,Twitter,"Totally disappointed, expected better.",#MachineLearning,Positive,464,38,46
+User_480,Facebook,Absolutely love the way they handled it.,#AI,Positive,170,5,15
+User_38,Facebook,"Machine Learning is the future, amazing stuff!",#MachineLearning,Neutral,155,90,3
+User_5,LinkedIn,"Neutral on this, nothing special.",#Coding,Negative,489,14,15
+User_235,Instagram,Absolutely love the way they handled it.,#Coding,Neutral,465,2,5
+User_319,Twitter,"Totally disappointed, expected better.",#Coding,Neutral,7,43,27
+User_289,Facebook,Why do people overhype this?,#Coding,Negative,108,82,7
+User_52,Twitter,This update is frustrating and full of bugs.,#MachineLearning,Positive,479,13,29
+User_38,LinkedIn,This update is frustrating and full of bugs.,#DataScience,Positive,97,86,39
+User_276,Reddit,Absolutely love the way they handled it.,#Coding,Neutral,492,21,38
