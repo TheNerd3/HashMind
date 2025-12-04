@@ -94,6 +94,36 @@ La aplicación descarga automáticamente los datos necesarios de NLTK la primera
 ### La aplicación no se abre
 Verifica que el puerto 8501 no esté en uso y reinicia la aplicación.
 
+## ⚙️ Opcional: FAISS y Embeddings avanzados
+
+Para acelerar búsquedas semánticas y usar embeddings de alta calidad, instala los siguientes paquetes opcionales.
+
+- FAISS (Linux/Windows/macOS): instalación recomendada según tu plataforma. En Windows, usa conda:
+
+```powershell
+conda install -c pytorch faiss-cpu -y
+```
+
+- sentence-transformers y transformers (para embeddings de texto e imágenes):
+
+```powershell
+pip install sentence-transformers transformers torchvision
+```
+
+Si no instalas FAISS o sentence-transformers, la aplicación usará implementaciones de fallback (búsqueda NumPy y embeddings dummy) pero funcionará más despacio.
+
+## ✅ Prueba rápida (smoke test)
+
+Se incluye un pequeño script de prueba para validar imports y funciones clave sin ejecutar Streamlit. Ejecuta esto desde la raíz del proyecto:
+
+```powershell
+pip install -r requirements.txt
+python -m pip install --upgrade sentence-transformers faiss-cpu   # opcional
+python tests/smoke_test.py
+```
+
+El script probará carga de módulos, procesamiento de CSV mínimo y generación de embeddings de ejemplo.
+
 ## 📞 Soporte
 
 Si encuentras algún problema:
